@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
-    <!-- Makes the website responsive on phones/tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>A Tree's Journey</title>
@@ -13,7 +14,10 @@
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
     <header>
         <nav class="navbar">
 
@@ -21,7 +25,7 @@
                 🌱 A Tree's Journey
             </div>
 
-            <button class="menu-btn" id="menuBtn">
+            <button id="menuBtn" class="menu-btn">
                 ☰
             </button>
 
@@ -36,24 +40,33 @@
     </header>
 
 
-    <!-- HERO -->
-    <section class="hero" id="home">
+    <!-- =========================
+         HERO / HOME
+    ========================== -->
+
+    <section id="home" class="hero">
 
         <div class="hero-content">
 
-            <p class="small-title">OUR TREE PROJECT</p>
+            <p class="small-title">
+                OUR TREE PROJECT
+            </p>
 
-            <h1>
-                From a Small <span>Sapling</span>
-                to a Strong Tree
+            <h1 id="treeName">
+                Loading tree...
             </h1>
+
+            <p class="plant-date">
+                Planted:
+                <span id="plantDate">Loading...</span>
+            </p>
 
             <p class="hero-text">
                 Follow the journey of our tree as it grows,
-                changes, and becomes part of the environment.Niggaboi
+                changes, and becomes part of the environment.
             </p>
 
-            <a href="#journey" class="main-btn">
+            <a href="#growth" class="hero-btn">
                 Explore Its Journey →
             </a>
 
@@ -66,49 +79,73 @@
     </section>
 
 
-    <!-- ABOUT -->
-    <section class="section" id="journey">
+    <!-- =========================
+         JOURNEY
+    ========================== -->
+
+    <section id="journey" class="section">
 
         <div class="section-title">
+
             <p>THE JOURNEY</p>
-            <h2>Every Tree Has a Story</h2>
+
+            <h2>From Sapling to Tree</h2>
+
+            <span>
+                Every tree begins with a small step.
+            </span>
+
         </div>
 
-        <div class="about-container">
 
-            <div class="about-card">
-                <div class="icon">🌱</div>
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🌱
+                </div>
 
                 <h3>Planting</h3>
 
                 <p>
-                    Our journey begins with planting a young
-                    sapling and giving it a place to grow.
+                    Our journey begins when the young sapling
+                    is carefully planted into the soil.
                 </p>
+
             </div>
 
 
-            <div class="about-card">
-                <div class="icon">💧</div>
+            <div class="card">
+
+                <div class="card-icon">
+                    🌿
+                </div>
 
                 <h3>Growing</h3>
 
                 <p>
-                    With water, sunlight, soil, and care,
-                    the sapling slowly develops.
+                    With sunlight, water, and care,
+                    the sapling begins developing new leaves
+                    and stronger roots.
                 </p>
+
             </div>
 
 
-            <div class="about-card">
-                <div class="icon">🌳</div>
+            <div class="card">
+
+                <div class="card-icon">
+                    🌳
+                </div>
 
                 <h3>Becoming a Tree</h3>
 
                 <p>
-                    Over time, the small sapling grows into
-                    a stronger and healthier tree.
+                    Over time, the small sapling grows stronger
+                    and becomes an important part of its environment.
                 </p>
+
             </div>
 
         </div>
@@ -116,143 +153,78 @@
     </section>
 
 
-    <!-- GROWTH -->
-    <section class="growth-section" id="growth">
+    <!-- =========================
+         GROWTH TIMELINE
+    ========================== -->
+
+    <section id="growth" class="section growth-section">
 
         <div class="section-title">
+
             <p>GROWTH TIMELINE</p>
-            <h2>Watch It Grow</h2>
+
+            <h2>Our Tree's Progress</h2>
+
+            <span>
+                Follow every update of our tree's growth.
+            </span>
+
         </div>
 
 
-        <div class="timeline">
+        <!-- Firestore updates will appear here -->
 
-            <div class="timeline-item">
+        <div class="timeline" id="timeline">
 
-                <div class="timeline-dot">
-                    1
-                </div>
-
-                <div class="timeline-card">
-
-                    <span>DAY 1</span>
-
-                    <h3>The Sapling</h3>
-
-                    <p>
-                        The tree was planted and officially
-                        began its journey.
-                    </p>
-
-                    <div class="height">
-                        Height: <strong>20 cm</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot">
-                    2
-                </div>
-
-                <div class="timeline-card">
-
-                    <span>WEEK 2</span>
-
-                    <h3>New Growth</h3>
-
-                    <p>
-                        New leaves begin appearing as the
-                        sapling adapts to its environment.
-                    </p>
-
-                    <div class="height">
-                        Height: <strong>25 cm</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot">
-                    3
-                </div>
-
-                <div class="timeline-card">
-
-                    <span>MONTH 1</span>
-
-                    <h3>Growing Stronger</h3>
-
-                    <p>
-                        The plant develops more leaves and
-                        continues growing toward the sunlight.
-                    </p>
-
-                    <div class="height">
-                        Height: <strong>35 cm</strong>
-                    </div>
-
-                </div>
-
-            </div>
+            <p class="loading-text">
+                Loading tree updates...
+            </p>
 
         </div>
 
     </section>
 
 
-    <!-- LOCATION -->
-    <section class="section" id="location">
+    <!-- =========================
+         LOCATION
+    ========================== -->
+
+    <section id="location" class="section location-section">
 
         <div class="section-title">
-            <p>WHERE IT GROWS</p>
-            <h2>Our Tree's Location</h2>
+
+            <p>PLANTING LOCATION</p>
+
+            <h2>Where Our Tree Was Planted</h2>
+
+            <span>
+                Find the current location of the tree project.
+            </span>
+
         </div>
 
 
-        <div class="location-container">
+        <div class="location-box">
 
-            <div class="location-info">
+            <button id="locationBtn" class="location-btn">
+                📍 Get My Location
+            </button>
 
-                <div class="location-icon">
-                    📍
-                </div>
-
-                <h3>Planting Location</h3>
-
-                <p>
-                    Add the location where your sapling
-                    was planted here.
-                </p>
-
-                <button class="location-btn" id="locationBtn">
-                    Get My Location
-                </button>
-
-                <p id="locationResult"></p>
-
-            </div>
-
+            <p id="locationResult">
+                Click the button to get your current location.
+            </p>
 
             <div class="map-placeholder">
 
-                <div>
-                    <div class="map-icon">📍</div>
-
-                    <h3>Tree Location</h3>
-
-                    <p>
-                        Your map can be placed here.
-                    </p>
+                <div class="map-icon">
+                    📍
                 </div>
+
+                <h3>Tree Location</h3>
+
+                <p>
+                    GPS location will appear above.
+                </p>
 
             </div>
 
@@ -261,43 +233,356 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
 
-        <div class="footer-logo">
-            🌱 A Tree's Journey
+        <div class="footer-content">
+
+            <h3>
+                🌱 A Tree's Journey
+            </h3>
+
+            <p>
+                Documenting the growth of a tree,
+                one step at a time.
+            </p>
+
+            <p class="copyright">
+                © 2026 A Tree's Journey
+            </p>
+
         </div>
-
-        <p>
-            Growing today. Protecting tomorrow.
-        </p>
-
-        <div class="footer-line"></div>
-
-        <p class="copyright">
-            © 2026 A Tree's Journey
-        </p>
 
     </footer>
 
 
-    <!-- Firebase -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+    <!-- =========================
+         FIREBASE
+    ========================== -->
 
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "a-tree-s-journey.firebaseapp.com",
-    projectId: "a-tree-s-journey",
-    storageBucket: "a-tree-s-journey.firebasestorage.app",
-    messagingSenderId: "19011719513",
-    appId: "1:19011719513:web:096011042412d4aa3b7c48"
-  };
+    <script type="module">
 
-  const app = initializeApp(firebaseConfig);
-</script>
+        import { initializeApp }
+            from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
 
-<script src="script.js"></script>
+        import {
+            getFirestore,
+            doc,
+            getDoc,
+            collection,
+            getDocs,
+            query,
+            orderBy
+        }
+            from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+
+
+        /* =========================
+           FIREBASE CONFIG
+        ========================== */
+
+        const firebaseConfig = {
+
+            apiKey: "YOUR_API_KEY",
+
+            authDomain:
+                "a-tree-s-journey.firebaseapp.com",
+
+            projectId:
+                "a-tree-s-journey",
+
+            storageBucket:
+                "a-tree-s-journey.firebasestorage.app",
+
+            messagingSenderId:
+                "19011719513",
+
+            appId:
+                "1:19011719513:web:096011042412d4aa3b7c48"
+        };
+
+
+        /* =========================
+           INITIALIZE FIREBASE
+        ========================== */
+
+        const app = initializeApp(firebaseConfig);
+
+        const db = getFirestore(app);
+
+
+        /* =========================
+           LOAD TREE DATA
+        ========================== */
+
+        async function loadTree() {
+
+            try {
+
+                /*
+                 Firestore structure:
+
+                 tree
+                  └── tree1
+                       ├── tree
+                       ├── plantDate
+                       │
+                       └── progress
+                            ├── update1
+                            ├── update2
+                            └── ...
+                */
+
+
+                /* =========================
+                   GET TREE DOCUMENT
+                ========================== */
+
+                const treeRef =
+                    doc(db, "tree", "tree1");
+
+                const treeSnap =
+                    await getDoc(treeRef);
+
+
+                if (!treeSnap.exists()) {
+
+                    console.log("Tree document not found.");
+
+                    document.getElementById("treeName").textContent =
+                        "Tree Not Found";
+
+                    return;
+                }
+
+
+                const treeData =
+                    treeSnap.data();
+
+
+                /* =========================
+                   DISPLAY TREE NAME
+                ========================== */
+
+                document.getElementById("treeName").textContent =
+                    treeData.tree || "Our Tree";
+
+
+                /* =========================
+                   DISPLAY PLANTING DATE
+                ========================== */
+
+                document.getElementById("plantDate").textContent =
+                    treeData.plantDate || "Unknown";
+
+
+                /* =========================
+                   GET PROGRESS COLLECTION
+                ========================== */
+
+                const progressRef =
+                    collection(
+                        db,
+                        "tree",
+                        "tree1",
+                        "progress"
+                    );
+
+
+                /*
+                 Sort updates from oldest
+                 to newest using the date field.
+                */
+
+                const progressQuery =
+                    query(
+                        progressRef,
+                        orderBy("date", "asc")
+                    );
+
+
+                const progressSnap =
+                    await getDocs(progressQuery);
+
+
+                const timeline =
+                    document.getElementById("timeline");
+
+
+                /* Remove loading message */
+
+                timeline.innerHTML = "";
+
+
+                /* =========================
+                   NO UPDATES
+                ========================== */
+
+                if (progressSnap.empty) {
+
+                    timeline.innerHTML = `
+                        <p class="loading-text">
+                            No tree updates yet.
+                        </p>
+                    `;
+
+                    return;
+                }
+
+
+                /* =========================
+                   CREATE TIMELINE
+                ========================== */
+
+                let number = 1;
+
+
+                progressSnap.forEach((progressDoc) => {
+
+                    const update =
+                        progressDoc.data();
+
+
+                    /* =========================
+                       FORMAT DATE
+                    ========================== */
+
+                    let updateDate =
+                        "Date unavailable";
+
+
+                    if (update.date) {
+
+                        if (
+                            typeof update.date.toDate ===
+                            "function"
+                        ) {
+
+                            updateDate =
+                                update.date
+                                    .toDate()
+                                    .toLocaleString();
+
+                        } else {
+
+                            updateDate =
+                                update.date;
+                        }
+                    }
+
+
+                    /* =========================
+                       CREATE TIMELINE ITEM
+                    ========================== */
+
+                    const item =
+                        document.createElement("div");
+
+
+                    item.className =
+                        "timeline-item";
+
+
+                    item.innerHTML = `
+
+                        <div class="timeline-dot">
+                            ${number}
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <span>
+                                ${updateDate}
+                            </span>
+
+                            <h3>
+                                ${update.health || "Tree Update"}
+                            </h3>
+
+                            <p>
+                                ${
+                                    update.description ||
+                                    "No description yet."
+                                }
+                            </p>
+
+                            <div class="height">
+                                Height:
+                                <strong>
+                                    ${update.height ?? 0} cm
+                                </strong>
+                            </div>
+
+                            <div class="height">
+                                Leaves:
+                                <strong>
+                                    ${update.leaves ?? 0}
+                                </strong>
+                            </div>
+
+                            <div class="height">
+                                Leaf Size:
+                                <strong>
+                                    ${update.leafSize ?? 0}
+                                </strong>
+                            </div>
+
+                            <div class="height">
+                                Leaves Lost:
+                                <strong>
+                                    ${update.leavesLost ?? 0}
+                                </strong>
+                            </div>
+
+                        </div>
+                    `;
+
+
+                    timeline.appendChild(item);
+
+
+                    number++;
+                });
+
+
+            } catch (error) {
+
+                console.error(
+                    "Error loading tree data:",
+                    error
+                );
+
+
+                document.getElementById("timeline").innerHTML = `
+
+                    <p class="loading-text">
+                        Unable to load tree updates.
+                    </p>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =========================
+           START FIREBASE LOADING
+        ========================== */
+
+        loadTree();
+
+    </script>
+
+
+    <!-- NORMAL JAVASCRIPT -->
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
+```
