@@ -1,4 +1,76 @@
 /* =========================
+   DISABLE IMAGE RIGHT-CLICK
+========================= */
+
+document.addEventListener("contextmenu", function (e) {
+    if (e.target.tagName === "IMG") {
+        e.preventDefault();
+    }
+});
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+const lightboxOverlay = document.getElementById("lightboxOverlay");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
+
+let currentPhotoList = [];
+let currentPhotoIndex = 0;
+
+function openLightbox(url, photoList) {
+    currentPhotoList = photoList || [url];
+    currentPhotoIndex = currentPhotoList.indexOf(url);
+    if (currentPhotoIndex === -1) currentPhotoIndex = 0;
+
+    updateLightboxImage();
+    lightboxOverlay.classList.add("active");
+
+    // Hide arrows if there's only one photo
+    const showArrows = currentPhotoList.length > 1;
+    lightboxPrev.style.display = showArrows ? "block" : "none";
+    lightboxNext.style.display = showArrows ? "block" : "none";
+}
+
+function updateLightboxImage() {
+    lightboxImage.src = currentPhotoList[currentPhotoIndex];
+}
+
+function showNextPhoto() {
+    currentPhotoIndex = (currentPhotoIndex + 1) % currentPhotoList.length;
+    updateLightboxImage();
+}
+
+function showPrevPhoto() {
+    currentPhotoIndex = (currentPhotoIndex - 1 + currentPhotoList.length) % currentPhotoList.length;
+    updateLightboxImage();
+}
+
+function closeLightbox() {
+    lightboxOverlay.classList.remove("active");
+    lightboxImage.src = "";
+}
+
+lightboxClose.addEventListener("click", closeLightbox);
+lightboxNext.addEventListener("click", showNextPhoto);
+lightboxPrev.addEventListener("click", showPrevPhoto);
+
+lightboxOverlay.addEventListener("click", function (e) {
+    if (e.target === lightboxOverlay) closeLightbox();
+});
+
+// Optional: keyboard arrow key support
+document.addEventListener("keydown", function (e) {
+    if (!lightboxOverlay.classList.contains("active")) return;
+    if (e.key === "ArrowRight") showNextPhoto();
+    if (e.key === "ArrowLeft") showPrevPhoto();
+    if (e.key === "Escape") closeLightbox();
+});
+
+/* =========================
    MOBILE MENU
 ========================= */
 
