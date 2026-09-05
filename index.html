@@ -202,9 +202,10 @@
                             <h3>${update.health || "Tree Update"}</h3>
                             <p>${update.description || "No description yet."}</p>
                             <div class="height">Height: <strong>${update.height ?? 0} cm</strong></div>
+                            <div class="height">Leaf Size: <strong>${update.leafSize ?? 0} cm</strong></div>
                             <div class="height">Leaves: <strong>${update.leaves ?? 0}</strong></div>
-                            <div class="height">Leaf Size: <strong>${update.leafSize ?? 0}</strong></div>
                             <div class="height">Leaves Lost: <strong>${update.leavesLost ?? 0}</strong></div>
+                            ${update.imageUrl ? `<img src="${update.imageUrl}" alt="Tree update photo" class="update-photo">` : ""}
                         </div>
                     `;
 
