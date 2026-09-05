@@ -89,6 +89,34 @@ links.forEach(function (link) {
     });
 });
 
+function buildPhotosHtml(photos) {
+
+    if (!Array.isArray(photos) || photos.length === 0) return "";
+
+    const isMobile = window.innerWidth <= 650;
+    const maxVisible = isMobile ? 1 : 3;
+
+    const visible = photos.slice(0, maxVisible);
+    const extraCount = photos.length - maxVisible;
+
+    return visible.map((url, index) => {
+
+        const isLastTile = index === maxVisible - 1;
+        const hasMore = isLastTile && extraCount > 0;
+
+        if (hasMore) {
+            return `
+                <div class="photo-stack" onclick='openLightbox("${url}", ${JSON.stringify(photos)})'>
+                    <img src="${url}" alt="Tree update photo" class="update-photo">
+                    <div class="photo-stack-overlay">+${extraCount}</div>
+                </div>
+            `;
+        }
+
+        return `<img src="${url}" alt="Tree update photo" class="update-photo" onclick='openLightbox("${url}", ${JSON.stringify(photos)})'>`;
+
+    }).join("");
+}
 /* =========================
    LOCATION / GPS
 ========================= */

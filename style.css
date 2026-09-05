@@ -747,7 +747,14 @@ footer {
     }
 
 }
+.update-photos {
+    grid-template-columns: 1fr;
+}
 
+.update-photo,
+.photo-stack {
+    aspect-ratio: 16 / 10;
+}
 
 /* =========================
    SMALL PHONES
