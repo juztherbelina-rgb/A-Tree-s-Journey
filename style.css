@@ -1,18 +1,6 @@
 /* =========================
    GENERAL
 ========================= */
-body {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-}
-
-.update-photo,
-.lightbox-content img {
-    -webkit-user-drag: none;
-    user-select: none;
-    -webkit-user-select: none;
-}
 
 * {
     margin: 0;
@@ -31,6 +19,17 @@ body {
     background: #ffffff;
     color: #17351f;
     line-height: 1.6;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+
+.update-photo,
+.lightbox-content img {
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 
@@ -356,7 +355,7 @@ header {
 }
 
 
-/* Multiple photos per update — always active, not just mobile */
+/* Multiple photos per update — desktop default: up to 3 in a row */
 
 .update-photos {
     display: grid;
@@ -746,15 +745,18 @@ footer {
         padding: 25px 15px;
     }
 
-}
-.update-photos {
-    grid-template-columns: 1fr;
+    /* Mobile: show 1 large photo tile instead of the 3-across grid */
+    .update-photos {
+        grid-template-columns: 1fr;
+    }
+
+    .update-photo,
+    .photo-stack {
+        aspect-ratio: 16 / 10;
+    }
+
 }
 
-.update-photo,
-.photo-stack {
-    aspect-ratio: 16 / 10;
-}
 
 /* =========================
    SMALL PHONES

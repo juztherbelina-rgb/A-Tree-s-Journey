@@ -29,7 +29,6 @@ function openLightbox(url, photoList) {
     updateLightboxImage();
     lightboxOverlay.classList.add("active");
 
-    // Hide arrows if there's only one photo
     const showArrows = currentPhotoList.length > 1;
     lightboxPrev.style.display = showArrows ? "block" : "none";
     lightboxNext.style.display = showArrows ? "block" : "none";
@@ -62,13 +61,15 @@ lightboxOverlay.addEventListener("click", function (e) {
     if (e.target === lightboxOverlay) closeLightbox();
 });
 
-// Optional: keyboard arrow key support
 document.addEventListener("keydown", function (e) {
     if (!lightboxOverlay.classList.contains("active")) return;
     if (e.key === "ArrowRight") showNextPhoto();
     if (e.key === "ArrowLeft") showPrevPhoto();
     if (e.key === "Escape") closeLightbox();
 });
+
+// Make it callable from the Firebase module script
+window.openLightbox = openLightbox;
 
 /* =========================
    MOBILE MENU
@@ -88,6 +89,11 @@ links.forEach(function (link) {
         navLinks.classList.remove("active");
     });
 });
+
+/* =========================
+   BUILD PHOTO GRID HTML
+   (1 photo on mobile, 3 on desktop, +N badge for extras)
+========================= */
 
 function buildPhotosHtml(photos) {
 
@@ -117,6 +123,10 @@ function buildPhotosHtml(photos) {
 
     }).join("");
 }
+
+// Make it callable from the Firebase module script
+window.buildPhotosHtml = buildPhotosHtml;
+
 /* =========================
    LOCATION / GPS
 ========================= */

@@ -103,6 +103,24 @@
         </div>
     </footer>
 
+    <!-- Lightbox markup (must exist before script.js runs) -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Full size photo">
+
+            <div class="lightbox-controls">
+                <span class="lightbox-arrow lightbox-prev" id="lightboxPrev">&#10094; Prev</span>
+                <span class="lightbox-arrow lightbox-next" id="lightboxNext">Next &#10095;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- script.js loads FIRST so window.buildPhotosHtml / window.openLightbox
+         exist before the Firebase module script below tries to use them -->
+    <script src="script.js"></script>
+
     <!-- =========================
          FIREBASE
     ========================== -->
@@ -149,32 +167,6 @@
             }
             return value;
         }
-        function buildPhotosHtml(photos) {
-
-    if (!Array.isArray(photos) || photos.length === 0) return "";
-
-    const maxVisible = 3;
-    const visible = photos.slice(0, maxVisible);
-    const extraCount = photos.length - maxVisible;
-
-    return visible.map((url, index) => {
-
-        const isLastTile = index === maxVisible - 1;
-        const hasMore = isLastTile && extraCount > 0;
-
-        if (hasMore) {
-            return `
-                <div class="photo-stack" onclick='openLightbox("${url}", ${JSON.stringify(photos)})'>
-                    <img src="${url}" alt="Tree update photo" class="update-photo">
-                    <div class="photo-stack-overlay">+${extraCount}</div>
-                </div>
-            `;
-        }
-
-        return `<img src="${url}" alt="Tree update photo" class="update-photo" onclick='openLightbox("${url}", ${JSON.stringify(photos)})'>`;
-
-    }).join("");
-}
 
         async function loadTree() {
 
@@ -220,8 +212,10 @@
 
                     const item = document.createElement("div");
                     item.className = "timeline-item";
-                    const photosHtml = buildPhotosHtml(update.photo)
-                       
+
+                    // buildPhotosHtml comes from script.js (window.buildPhotosHtml)
+                    const photosHtml = window.buildPhotosHtml(update.photo);
+
                     item.innerHTML = `
                         <div class="timeline-dot">${number}</div>
                         <div class="timeline-card">
@@ -243,7 +237,6 @@
 
             } catch (error) {
 
-                // THIS is the key fix — errors now show on the page, not just the console
                 console.error("Error loading tree data:", error);
 
                 setText("treeName", "Error Loading Tree");
@@ -261,21 +254,6 @@
         loadTree();
 
     </script>
-
-    <div class="lightbox-overlay" id="lightboxOverlay">
-    <span class="lightbox-close" id="lightboxClose">&times;</span>
-
-    <div class="lightbox-content">
-        <img id="lightboxImage" src="" alt="Full size photo">
-
-        <div class="lightbox-controls">
-            <span class="lightbox-arrow lightbox-prev" id="lightboxPrev">&#10094; Prev</span>
-            <span class="lightbox-arrow lightbox-next" id="lightboxNext">Next &#10095;</span>
-        </div>
-    </div>
-</div>
-
-    <script src="script.js"></script>
 
 </body>
 
