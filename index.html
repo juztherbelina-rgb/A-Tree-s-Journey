@@ -154,15 +154,15 @@
 
             try {
 
-                const treeRef = doc(db, "tree", "tree1");
+                const treeRef = doc(db, "Trees", "tree1");
                 const treeSnap = await getDoc(treeRef);
 
                 if (!treeSnap.exists()) {
-                    console.warn("No document found at tree/tree1. Check the collection/document names in Firestore.");
+                    console.warn("No document found at Trees/tree1. Check the collection/document names in Firestore.");
                     setText("treeName", "Tree Not Found");
                     setText("plantDate", "—");
                     document.getElementById("timeline").innerHTML =
-                        '<p class="loading-text">No tree document found at tree/tree1.</p>';
+                        '<p class="loading-text">No tree document found at Trees/tree1.</p>';
                     return;
                 }
 
@@ -172,7 +172,7 @@
                 setText("treeName", treeData.name || "Our Tree");
                 setText("plantDate", formatDate(treeData.plantDate));
 
-                const progressRef = collection(db, "tree", "tree1", "progress");
+                const progressRef = collection(db, "Trees", "tree1", "progress");
                 const progressQuery = query(progressRef, orderBy("date", "asc"));
                 const progressSnap = await getDocs(progressQuery);
 
