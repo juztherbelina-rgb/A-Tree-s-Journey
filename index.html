@@ -372,11 +372,27 @@
 
 
                 /* =========================
-                   DISPLAY PLANTING DATE
+                     DISPLAY PLANTING DATE
                 ========================== */
 
+                let plantingDate = "Unknown";
+
+                if (treeData.plantDate) {
+
+                    if (typeof treeData.plantDate.toDate === "function") {
+
+                        plantingDate = treeData.plantDate
+                            .toDate()
+                            .toLocaleString();
+
+                    } else {
+
+                        plantingDate = treeData.plantDate;
+                    }
+                }
+
                 document.getElementById("plantDate").textContent =
-                    treeData.plantDate || "Unknown";
+                    plantingDate;
 
 
                 /* =========================
