@@ -1,0 +1,24 @@
+.profile-page{padding:48px 0 80px;}
+.back-link{
+  display:inline-block;
+  font-size:14px;
+  color:var(--forest);
+  text-decoration:none;
+  margin-bottom:22px;
+}
+.back-link:hover{text-decoration:underline;}
+.profile-hero-card{
+  background:var(--paper);
+  border-radius:var(--radius);
+  padding:36px;
+  border-top:4px solid var(--spruce);
+}
+.profile-hero-card .eyebrow{margin-bottom:8px;}
+.profile-hero-card h1{font-size:clamp(28px,4vw,42px);color:var(--forest);}
+.profile-hero-card p{
+  font-size:15px;
+  color:var(--muted);
+  max-width:52ch;
+  margin:14px 0 0;
+  line-height:1.6;
+}

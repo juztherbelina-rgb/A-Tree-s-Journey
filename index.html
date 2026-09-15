@@ -1,260 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Tree's Journey</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Tree's Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">🌱 A Tree's Journey</div>
-            <button id="menuBtn" class="menu-btn">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#journey">Journey</a></li>
-                <li><a href="#growth">Growth</a></li>
-                <li><a href="#location">Location</a></li>
-            </ul>
-        </nav>
-    </header>
+<nav class="nav">
+  <a class="brand" href="index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 6 6 10 6 13a6 6 0 0012 0c0-3-2-7-6-11z" fill="#4c7a4f"/></svg>
+    A TREE'S JOURNEY
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#top">Home</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#growth">Growth</a></li>
+  </ul>
+</nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <p class="small-title">OUR TREE PROJECT</p>
-            <h1 id="treeName">Loading tree...</h1>
-            <p class="plant-date">
-                Planted: <span id="plantDate">Loading...</span>
-            </p>
-            <p class="hero-text">
-                Follow the journey of our tree as it grows,
-                changes, and becomes part of the environment...
-            </p>
-            <a href="#growth" class="hero-btn">Explore Its Journey →</a>
-        </div>
-        <div class="hero-tree">🌳</div>
-    </section>
+<section class="hero" id="top" aria-label="Hero">
+  <div class="hero-scene">
+    <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8ea77c"/>
+          <stop offset="0.55" stop-color="#3f5a3c"/>
+          <stop offset="1" stop-color="#1f3220"/>
+        </linearGradient>
+        <linearGradient id="fieldGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#83935a"/>
+          <stop offset="1" stop-color="#48562f"/>
+        </linearGradient>
+      </defs>
+      <rect width="800" height="400" fill="url(#skyGrad)"/>
+      <g fill="#2c4530" opacity="0.6">
+        <polygon points="0,230 40,150 80,230"/>
+        <polygon points="60,235 110,130 160,235"/>
+        <polygon points="140,230 190,160 240,230"/>
+        <polygon points="220,236 270,140 320,236"/>
+        <polygon points="300,230 350,155 400,230"/>
+        <polygon points="380,236 430,145 480,236"/>
+        <polygon points="460,230 510,160 560,230"/>
+        <polygon points="540,236 590,140 640,236"/>
+        <polygon points="620,230 670,155 720,230"/>
+        <polygon points="700,236 750,145 800,236"/>
+      </g>
+      <g fill="#1c2b1f">
+        <polygon points="-20,260 30,170 90,260"/>
+        <polygon points="60,265 120,155 190,265"/>
+        <polygon points="160,260 220,175 280,260"/>
+        <polygon points="260,268 320,160 390,268"/>
+        <polygon points="360,260 420,178 480,260"/>
+        <polygon points="460,268 520,160 590,268"/>
+        <polygon points="560,260 620,175 680,260"/>
+        <polygon points="660,268 720,160 800,268"/>
+      </g>
+      <rect y="260" width="800" height="140" fill="#5c6e3f"/>
+      <rect y="260" width="800" height="140" fill="url(#fieldGrad)" opacity="0.5"/>
+      <g fill="#26201a">
+        <ellipse cx="330" cy="300" rx="22" ry="14"/>
+        <circle cx="352" cy="288" r="10"/>
+        <ellipse cx="450" cy="296" rx="30" ry="18"/>
+        <circle cx="478" cy="282" r="12"/>
+      </g>
+    </svg>
+  </div>
+  <h1 class="hero-title">LET IT GROW</h1>
+</section>
 
-    <section id="journey" class="section">
-        <div class="section-title">
-            <p>THE JOURNEY</p>
-            <h2>From Sapling to Tree</h2>
-            <span>Every tree begins with a small step.</span>
-        </div>
+<div class="cta-row">
+  <a class="btn-primary" href="#journey">Explore the Journey</a>
+</div>
 
-        <div class="cards">
-            <div class="card">
-                <div class="card-icon">🌱</div>
-                <h3>Planting</h3>
-                <p>Our journey begins when the young sapling is carefully planted into the soil.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🌿</div>
-                <h3>Growing</h3>
-                <p>With sunlight, water, and care, the sapling begins developing new leaves and stronger roots.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🌳</div>
-                <h3>Becoming a Tree</h3>
-                <p>Over time, the small sapling grows stronger and becomes an important part of its environment.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="growth" class="section growth-section">
-        <div class="section-title">
-            <p>GROWTH TIMELINE</p>
-            <h2>Our Tree's Progress</h2>
-            <span>Follow every update of our tree's growth.</span>
-        </div>
-
-        <div class="timeline" id="timeline">
-            <p class="loading-text">Loading tree updates...</p>
-        </div>
-    </section>
-
-    <section id="location" class="section location-section">
-        <div class="section-title">
-            <p>PLANTING LOCATION</p>
-            <h2>Where Our Tree Was Planted</h2>
-            <span>Find the current location of the tree project.</span>
-        </div>
-
-        <div class="location-box">
-            <button id="locationBtn" class="location-btn">📍 Get My Location</button>
-            <p id="locationResult">Click the button to get your current location.</p>
-            <div class="map-placeholder">
-                <div class="map-icon">📍</div>
-                <h3>Tree Location</h3>
-                <p>GPS location will appear above.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <h3>🌱 A Tree's Journey</h3>
-            <p>Documenting the growth of a tree, one step at a time.</p>
-            <p class="copyright">© 2026 A Tree's Journey</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox markup (must exist before script.js runs) -->
-    <div class="lightbox-overlay" id="lightboxOverlay">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-
-        <div class="lightbox-content">
-            <img id="lightboxImage" src="" alt="Full size photo">
-
-            <div class="lightbox-controls">
-                <span class="lightbox-arrow lightbox-prev" id="lightboxPrev">&#10094; Prev</span>
-                <span class="lightbox-arrow lightbox-next" id="lightboxNext">Next &#10095;</span>
-            </div>
-        </div>
+<div class="wrap">
+  <section id="journey">
+    <div class="intro-card">
+      <div>
+        <div class="eyebrow">Tree Project</div>
+        <h2>From a Small Sapling to a Strong Tree</h2>
+        <p>Follow the journey of a sapling as it changes and grows and becomes a full grown tree.</p>
+      </div>
+      <div class="intro-tree">
+        <svg viewBox="0 0 150 130" aria-hidden="true">
+          <ellipse cx="55" cy="45" rx="42" ry="38" fill="#8fc98a"/>
+          <ellipse cx="95" cy="35" rx="34" ry="32" fill="#4c7a4f"/>
+          <ellipse cx="70" cy="20" rx="26" ry="24" fill="#4c7a4f"/>
+          <rect x="60" y="60" width="10" height="45" rx="3" fill="#5c4326"/>
+          <rect x="100" y="55" width="9" height="42" rx="3" fill="#5c4326"/>
+        </svg>
+      </div>
     </div>
+  </section>
 
-    <!-- script.js loads FIRST so window.buildPhotosHtml / window.openLightbox
-         exist before the Firebase module script below tries to use them -->
-    <script src="script.js"></script>
+  <section id="growth">
+    <div class="section-head">
+      <div class="eyebrow">Pick a sapling</div>
+      <h2>Watch It Grow</h2>
+    </div>
+    <div class="profile-grid">
+      <a class="profile-card spruce" href="page1.html">
+        <span class="pick">Open</span>
+        <span class="swatch">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 5 12h4l-5 8h16l-5-8h4z" fill="#fff"/></svg>
+        </span>
+        <div class="eyebrow">Profile</div>
+        <div class="p-name">Blue Spruce Sapling</div>
+        <div class="p-week">Currently on Week 6</div>
+      </a>
+      <a class="profile-card maple" href="page2.html">
+        <span class="pick">Open</span>
+        <span class="swatch">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 5 12h4l-5 8h16l-5-8h4z" fill="#fff"/></svg>
+        </span>
+        <div class="eyebrow">Profile</div>
+        <div class="p-name">Red Maple Sapling</div>
+        <div class="p-week">Currently on Week 4</div>
+      </a>
+    </div>
+  </section>
+</div>
 
-    <!-- =========================
-         FIREBASE
-    ========================== -->
+<footer>
+  <div class="brand">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8 6 6 10 6 13a6 6 0 0012 0c0-3-2-7-6-11z" fill="#dfe8dc"/></svg>
+    A TREE'S JOURNEY
+  </div>
+  Follow every sapling, one week at a time.
+</footer>
 
-    <script type="module">
-
-        import { initializeApp }
-            from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-
-        import {
-            getFirestore,
-            doc,
-            getDoc,
-            collection,
-            getDocs,
-            query,
-            orderBy
-        }
-            from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
-
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAaSHy0STrqtjXltOxx-B33W13LxMawlik",
-            authDomain: "a-tree-s-journey.firebaseapp.com",
-            projectId: "a-tree-s-journey",
-            storageBucket: "a-tree-s-journey.firebasestorage.app",
-            messagingSenderId: "19011719513",
-            appId: "1:19011719513:web:096011042412d4aa3b7c48"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // Helper so we never crash on a missing element
-        function setText(id, text) {
-            const el = document.getElementById(id);
-            if (el) el.textContent = text;
-        }
-
-        function formatDate(value) {
-            if (!value) return "Unknown";
-            if (typeof value.toDate === "function") {
-                return value.toDate().toLocaleString();
-            }
-            return value;
-        }
-
-        async function loadTree() {
-
-            try {
-
-                const treeRef = doc(db, "Trees", "tree1");
-                const treeSnap = await getDoc(treeRef);
-
-                if (!treeSnap.exists()) {
-                    console.warn("No document found at Trees/tree1. Check the collection/document names in Firestore.");
-                    setText("treeName", "Tree Not Found");
-                    setText("plantDate", "—");
-                    document.getElementById("timeline").innerHTML =
-                        '<p class="loading-text">No tree document found at Trees/tree1.</p>';
-                    return;
-                }
-
-                const treeData = treeSnap.data();
-                console.log("Tree data loaded:", treeData);
-
-                setText("treeName", treeData.name || "Our Tree");
-                setText("plantDate", formatDate(treeData.plantDate));
-
-                const progressRef = collection(db, "Trees", "tree1", "progress");
-                const progressQuery = query(progressRef, orderBy("date", "asc"));
-                const progressSnap = await getDocs(progressQuery);
-
-                const timeline = document.getElementById("timeline");
-                timeline.innerHTML = "";
-
-                if (progressSnap.empty) {
-                    timeline.innerHTML =
-                        '<p class="loading-text">No tree updates yet.</p>';
-                    return;
-                }
-
-                let number = 1;
-
-                progressSnap.forEach((progressDoc) => {
-
-                    const update = progressDoc.data();
-                    const updateDate = formatDate(update.date);
-
-                    const item = document.createElement("div");
-                    item.className = "timeline-item";
-
-                    // buildPhotosHtml comes from script.js (window.buildPhotosHtml)
-                    const photosHtml = window.buildPhotosHtml(update.photo);
-
-                    item.innerHTML = `
-                        <div class="timeline-dot">${number}</div>
-                        <div class="timeline-card">
-                            <span>${updateDate}</span>
-                            <h3>${update.month || "Plant condition unknown"}</h3>
-                            <p>${update.description || "No description yet."}</p>
-                            <div class="height">Condition: <strong>${update.Health ?? 0} </strong></div>
-                            <div class="height">Height: <strong>${update.height ?? 0} cm</strong></div>
-                            <div class="height">Leaf Size: <strong>${update.leafSize ?? 0} cm</strong></div>
-                            <div class="height">Leaves: <strong>${update.leaves ?? 0}</strong></div>
-                            <div class="height">Leaves Lost: <strong>${update.leavesLost ?? 0}</strong></div>
-                            <div class="update-photos">${photosHtml}</div>
-                        </div>
-                    `;
-
-                    timeline.appendChild(item);
-                    number++;
-                });
-
-            } catch (error) {
-
-                console.error("Error loading tree data:", error);
-
-                setText("treeName", "Error Loading Tree");
-                setText("plantDate", "—");
-
-                document.getElementById("timeline").innerHTML = `
-                    <p class="loading-text">
-                        Unable to load tree updates.<br>
-                        <strong>${error.code || ""}</strong> ${error.message || error}
-                    </p>
-                `;
-            }
-        }
-
-        loadTree();
-
-    </script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
