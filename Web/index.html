@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Tree's Journey</title>
+
+    <!-- Connects this page to the CSS file (must be in the SAME folder) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- id="top" = the very top of the page. Logo and "Home" jump here. -->
+<body id="top">
+
+    <!-- ========== NAVIGATION BAR ========== -->
+    <nav class="navbar">
+
+        <div class="logo-links">
+            <a href="#top">A Tree's Journey</a>
+        </div>
+
+        <div class="nav-links">
+            <a href="#top">Home</a>
+            <a href="#aboutUs">About Us</a>
+            <a href="#profiles">Profiles</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+
+    </nav>
+
+    <!-- ========== HOME SECTION (forest picture + title) ========== -->
+    <section class="hero" id="home">
+        <img src="img/homepg.jpg">
+    </section>
+
+    <!-- ========== ABOUT US SECTION ========== -->
+    <section id="aboutUs">
+        <h1>About Us</h1>
+        <p>Learn more about our organization and our mission to promote environmental awareness.</p>
+    </section>
+
+    <!-- ========== PROFILES SECTION ========== -->
+    <section id="profiles">
+        <h1>Profiles</h1>
+        <p>Select a profile to view more information.</p>
+
+        <!-- Box that holds the two profile cards -->
+        <div class="profile-list">
+
+            <!-- PROFILE 1 (click to open p1/profile1.html) -->
+            <a class="profile-card" href="p1/profile1.html">
+                <!-- Initials circle. To use a real photo, delete this div and use:
+                     <img class="profile-photo" src="img/person1.jpg" alt="Marlon"> -->
+                <div class="profile-photo">M</div>
+                <h2>Marlon</h2>
+            </a>
+
+            <!-- PROFILE 2 (click to open p2/profile2.html) -->
+            <a class="profile-card" href="p2/profile2.html">
+                <div class="profile-photo">A</div>
+                <h2>Ashler</h2>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION ========== -->
+    <section id="gallery">
+        <h1>Gallery</h1>
+        <p>Explore the stories of various trees and their unique journeys.</p>
+    </section>
+
+</body>
+
+</html>
